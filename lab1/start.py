@@ -1,14 +1,22 @@
+from myPackage import app
+
+# if __name__ == '__main__':
+# 	app.run(debug=True)
+
+
+
+
 # import flask
-from flask import Flask, render_template, url_for, redirect, flash
-import os
+# from flask import Flask, render_template, url_for, redirect, flash
+# import os
 
 # create flask app, __name__ = tell flask where to look
-app = Flask(__name__)
+# app = Flask(__name__)
 
 # Add this secret key when you create database and forms
 # Get Random letters from python terminal
 # import secrets -> secrets.token_hex(16)
-app.config['SECRET_KEY'] = os.environ['SECRET_KEY']
+# app.config['SECRET_KEY'] = os.environ['SECRET_KEY']
 
 # FLASK_APP= 'start.py'
 # DEBUG = 1
@@ -19,39 +27,39 @@ app.config['SECRET_KEY'] = os.environ['SECRET_KEY']
 # to allow us to have a function for this specific route
 
 
-nav= [
-	{
-		'function': 'home',
-		'url':'home',
-	},
-	{
-		'function': 'about',
-		'url':'about',
-	},
-	{
-		'function': 'redirectFunc',
-		'url':'redirect',
-	}
-]
+# nav= [
+# 	{
+# 		'function': 'home',
+# 		'url':'home',
+# 	},
+# 	{
+# 		'function': 'about',
+# 		'url':'about',
+# 	},
+# 	{
+# 		'function': 'redirectFunc',
+# 		'url':'redirect',
+# 	}
+# ]
 
 
-# Homepage Endpoint
-@app.route('/')
-@app.route('/home')
-def home():
-	return render_template('home.html', title="home page",nav=nav)
+# # Homepage Endpoint
+# @app.route('/')
+# @app.route('/home')
+# def home():
+# 	return render_template('home.html', title="home page",navs=nav)
 
 
 
-# About Endpoint
-@app.route('/about')
-def about():
-	return render_template('about.html', title='about page',nav=nav)
+# # About Endpoint
+# @app.route('/about')
+# def about():
+# 	return render_template('about.html', title='about page',navs=nav)
 
-# Redirect Endpoint
-@app.route('/redirect')
-def redirectFunc():
-	return redirect(url_for('home'),nav=nav)
+# # Redirect Endpoint
+# @app.route('/redirect')
+# def redirectFunc():
+# 	return redirect(url_for('home'))
 
 
 
@@ -91,5 +99,5 @@ def redirectFunc():
 # @app.route('/redirect')
 # def redirectFunc():
 # 	return redirect(url_for('home'))
-if __name__ == '__main__':
-	app.run(debug=True)
+# if __name__ == '__main__':
+# 	app.run(debug=True)
